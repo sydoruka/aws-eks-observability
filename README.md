@@ -1,4 +1,4 @@
-### This project deploys a demo web application (https://github.com/GoogleCloudPlatform/microservices-demo), composed of 11 microservices, on AWS EKS provisioned with Terraform. <br>Kube Prometheus Stack provides Prometheus and Grafana for Kubernetes monitoring. <br>Grafana Alloy collects Kubernetes pod logs and sends them to Loki, where Grafana can be used to visualize the logs and metrics.
+This project deploys a demo web application (https://github.com/GoogleCloudPlatform/microservices-demo), composed of 11 microservices, on AWS EKS provisioned with Terraform. <br>Kube Prometheus Stack provides Prometheus and Grafana for Kubernetes monitoring. <br>Grafana Alloy collects Kubernetes pod logs and sends them to Loki, where Grafana can be used to visualize the logs and metrics.
 
 ## Architecture
 
