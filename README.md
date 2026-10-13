@@ -53,12 +53,12 @@ Ensure you have `git`, `aws`, `terraform`, `kubectl` and `helm` installed and co
 
 5. Access the Grafana instance locally
    ```sh
-   export POD_NAME=$(kubectl --namespace monitoring get pod -l "app.kubernetes.io/name=grafana,app.kubernetes.io/instance=kube-prometheus-stack" -oname)
-   kubectl --namespace monitoring port-forward $POD_NAME 3000
+   export POD_NAME=$(kubectl -n monitoring get pod -l "app.kubernetes.io/name=grafana,app.kubernetes.io/instance=kube-prometheus-stack" -oname)
+   kubectl -n monitoring port-forward $POD_NAME 3000
    ```
    Get Grafana 'admin' user password by running:
    ```sh
-   kubectl --namespace monitoring get secrets kube-prometheus-stack-grafana -o jsonpath="{.data.admin-password}" | base64 -d ; echo
+   kubectl -n monitoring get secrets kube-prometheus-stack-grafana -o jsonpath="{.data.admin-password}" | base64 -d ; echo
    ```
    Visit `http://localhost:3000` in a web browser to access your instance of Grafana.<br>
    Import the `Grafana-Dashboard.json` into Grafana and monitor the application.
