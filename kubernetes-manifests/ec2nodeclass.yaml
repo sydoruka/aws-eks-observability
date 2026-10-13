@@ -1,0 +1,17 @@
+apiVersion: karpenter.k8s.aws/v1
+kind: EC2NodeClass
+metadata:
+  name: default
+spec:
+  amiSelectorTerms:
+    - alias: al2023@latest
+  role: eks-practice-al2023-karpenter
+  subnetSelectorTerms:
+    - tags:
+        karpenter.sh/discovery: eks-practice-al2023
+  securityGroupSelectorTerms:
+    - tags:
+        karpenter.sh/discovery: eks-practice-al2023
+  tags:
+    karpenter.sh/discovery: eks-practice-al2023
+    Name: eks-practice-al2023-karpenter

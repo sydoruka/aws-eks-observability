@@ -1,0 +1,16 @@
+# Terraform local data and plans
+**/.terraform/
+*.tfstate
+*.tfstate.*
+*.tfvars
+!*.tfvars.example
+tfplan
+*.tfplan
+
+# Local environment files
+.env
+.env.*
+!.env.example
+
+# Common local artifacts
+.DS_Store
