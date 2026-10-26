@@ -11,16 +11,22 @@ Grafana Dashboard
 
 ## Setup
 
-Ensure you have `git`, `aws`, `terraform`, `kubectl` and `helm` installed and configured. 
+Ensure you have `git`, `aws`, `terraform`, `kubectl` and `helm` installed and configured.
 
-1. Clone the repository
+0. Backend
+
+   The S3 bucket should be created in AWS console for storing terraform.tfstate files.
+   Details are in the `/terraform/backend.tf`
+
+
+2. Clone the repository
 
    ```sh
    git clone https://github.com/sydoruka/aws-eks-observability.git
    cd aws-eks-observability/
    ```
 
-2. Create the EKS cluster.
+3. Create the EKS cluster.
 
    ```sh
    cd terraform/
@@ -31,12 +37,12 @@ Ensure you have `git`, `aws`, `terraform`, `kubectl` and `helm` installed and co
 
    Creating the cluster may take 10-15 minutes.
 
-3. Update the EKS endpoint
+4. Update the EKS endpoint
    ```sh
    aws eks update-kubeconfig --region eu-central-1 --name eks-practice-al2023
    ```
 
-4. Deploy the application to the cluster.
+5. Deploy the application to the cluster.
 
    ```sh
    kubectl apply -f ../release/kubernetes-manifests.yaml
