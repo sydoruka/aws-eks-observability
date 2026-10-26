@@ -15,7 +15,7 @@ Ensure you have `git`, `aws`, `terraform`, `kubectl` and `helm` installed and co
 
 0. Backend
 
-   The S3 bucket should be created in AWS console for storing terraform.tfstate files.
+   The S3 bucket should be created in AWS console for storing `terraform.tfstate` file.
    Details are in the `/terraform/backend.tf`
 
 
